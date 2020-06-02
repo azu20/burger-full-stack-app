@@ -5,16 +5,22 @@
   <hr class="my-4">
   <div class="row">
     <div class="col-md-6 text-center">
-      <ul class="listBurger">
+      <table class="listBurger">
+        <th>
+          <tr>Uneaten burgers</tr>
+        </th>
         {{#each burgers}}
-        <option value="{{id}}">{{'Devoured=1'}}</option>
+        <th>
+        <tr>{{this.burger_name}}</tr>
+        </th>
         {{/each}}
-      </ul>
+
+      </table>
     </div>
     <div class="col-md-6 text-center">
       <ul class="upBurger">
         {{#each burgers}}
-        <option value="{{id}}">{{'Devoured=0'}}</option> 
+       
         {{/each}}
       </ul>
     </div>

@@ -5,6 +5,7 @@ const burger = require("../models/burger.js");
 
 router.get("/", async(req, res) => {
     const data = await burger.all();
+    console.log(data);
 
     res.render("index", { burgers: data });
 });
