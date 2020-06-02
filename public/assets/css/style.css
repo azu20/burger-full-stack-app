@@ -1,23 +1,11 @@
 body {
-    background-color: darkblue;
+    background-color: rebeccapurple;
 }
 
-h1 {
-    font-weight: bolder;
+.container {
+    background-color: rebeccapurple;
 }
 
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-}
-
-textarea {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-}
-
-.form-group {
-    margin-bottom: 5px;
+.btn-info {
+    background-color: red;
 }

@@ -1,34 +1,52 @@
 <div class="jumbotron">
-  <h1 class="display-4 text-center">Eat the Burger!</h1>
-  <img src="../public/assets/images/burger-img.jpg" class="mx-auto" style="width: 450px;" alt="burger">
-  <p class="lead text-center">Enter a burger type. Once it has been added to the list, click to eat or right click to update.</p>
-  <hr class="my-4">
-  <div class="row">
-    <div class="col-md-6 text-center">
-      <table class="listBurger">
-        <th>
-          <tr>Uneaten burgers</tr>
-        </th>
-        {{#each burgers}}
-        <th>
-        <tr>{{this.burger_name}}</tr>
-        </th>
-        {{/each}}
+  <h1 class="display-4 text-center">Eat That Burger!</h1>
 
+  <hr class="my-4">
+  <p class="lead text-center">Add a burger. Once it has been added to the Uneaten Burger list click to eat. </p> 
+   <p class="lead text-center"> Once the burger is on the Burgers Eaten list, click on the burger to delete.</p>
+   <div class="text-center">
+  <img src="../public/assets/images/burger-img.jpg" class="rounded" alt="Burger">
+</div>
+</div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <table id="unEatenBurg">
+        <tr>
+          <th>Uneaten Burgers</th>
+        </tr>
+        <tr>
+          <td>
+            {{#each burgers}}
+          </td>
+        </tr>
+        <tr>
+          <td><button id="updateBurger">{{this.burger_name}}</button></td>
+        </tr>
+        {{/each}}
       </table>
     </div>
-    <div class="col-md-6 text-center">
-      <ul class="upBurger">
-        {{#each burgers}}
-       
+    <div class="col-md-auto">
+      <table id="eatenBurg">
+        <tr>
+          <th>Burgers Eaten</th>
+        </tr>
+        <tr>
+          <td>
+            {{#each burgers}}
+          </td>
+        </tr>
+        <tr>
+          <td><button id="deleteBurger">{{this.burger_name}}</button></td>
+        </tr>
         {{/each}}
-      </ul>
+      </table>
     </div>
   </div>
-  <div class= "addBurger text-center">
-  <textarea type="text" name="create-burger-text"></textarea>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Add Burger</a>
-  </div>
+  <br>
+  <hr class="my-4">
+  <form id="addBurger" class="text-center">
+    <input type="text" name="create-burger-text"></input>
+    <button class="btn btn-info btn-md" href="#" role="button" id="addBurgBtn">Add Burger</button>
+  </form>
 </div>
-
-
