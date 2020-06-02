@@ -1,20 +1,23 @@
+body {
+    background-color: darkblue;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
 li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
+}
+
+textarea {
     padding: 5px;
     margin: 5px;
     background: aqua;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 5px;
-  }
-  
+}

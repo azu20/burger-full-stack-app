@@ -1,32 +1,28 @@
-<h1>Destroy that Burger!</h1>
-
-<h2>Not Destroyed!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless Devoured}}
-      {{> burgers/burgers-block Devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers Destroyed!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if Devoured}}
-      {{> burgers/burgers-block Devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="bu">Burger Name:</label>
-    <input type="text" id="bu" name="name">
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Eat the Burger!</h1>
+  <img src="../public/assets/images/burger-img.jpg" class="mx-auto" style="width: 450px;" alt="burger">
+  <p class="lead text-center">Enter a burger type. Once it has been added to the list, click to eat or right click to update.</p>
+  <hr class="my-4">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <ul class="listBurger">
+        {{#each burgers}}
+        <option value="{{id}}">{{'Devoured=1'}}</option>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <ul class="upBurger">
+        {{#each burgers}}
+        <option value="{{id}}">{{'Devoured=0'}}</option> 
+        {{/each}}
+      </ul>
+    </div>
   </div>
+  <div class= "addBurger text-center">
+  <textarea type="text" name="create-burger-text"></textarea>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Add Burger</a>
+  </div>
+</div>
 
-  <button type="submit">Add Burger</button>
-</form>
+

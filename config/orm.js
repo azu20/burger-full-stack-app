@@ -2,65 +2,65 @@
 const connection = require("./connection.js");
 
 const printQuestionMarks = num => {
-  const arr = [];
+    const arr = [];
 
-  for (let i = 0; i < num; i++) {
-    arr.push("?");
-  }
+    for (let i = 0; i < num; i++) {
+        arr.push("?");
+    }
 
-  return arr.toString();
+    return arr.toString();
 }
 
 // Helper function to convert object key/value pairs to SQL syntax
 const objToSql = ob => {
-  const arr = [];
+    const arr = [];
 
 
-  for (const key in ob) {
-    let value = ob[key];
+    for (const key in ob) {
+        let value = ob[key];
 
-    if (Object.hasOwnProperty.call(ob, key)) {
+        if (Object.hasOwnProperty.call(ob, key)) {
 
-      if (typeof value === "string" && value.indexOf(" ") >= 0) {
-        value = "'" + value + "'";
-      }
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                value = "'" + value + "'";
+            }
 
-      arr.push(key + "=" + value);
+            arr.push(key + "=" + value);
+        }
     }
-  }
 
-  // translate array of strings to a single comma-separated string
-  return arr.toString();
+    // translate array of strings to a single comma-separated string
+    return arr.toString();
 }
 
 // Object for all our SQL statement functions.
 const orm = {
-  all: async (tableInput) => {
-    const queryString = `SELECT * FROM ${tableInput}`;
+    all: async(tableInput) => {
+        const queryString = `SELECT * FROM ${tableInput}`;
 
-    const result = await connection.query(queryString);
+        const result = await connection.query(queryString);
 
-    return result;
-  },
+        return result;
+    },
 
-  create: async (table, cols, vals) => {
-    let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
+    create: async(table, cols, vals) => {
+        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
 
-    console.log(queryString);
+        console.log(queryString);
 
-    const result = await connection.query(queryString, vals);
+        const result = await connection.query(queryString, vals);
 
-    return result;
-  },
-  // An example of objColVals would be {name: panther, sleepy: true}
-  update: async (table, objColVals, condition) => {
-    let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
+        return result;
+    },
 
-    console.log(queryString);
-    const result = await connection.query(queryString);
+    update: async(table, objColVals, condition) => {
+        let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
 
-    return result;
-  }
+        console.log(queryString);
+        const result = await connection.query(queryString);
+
+        return result;
+    }
 };
 
 // Export the orm object for the model (cat.js).
