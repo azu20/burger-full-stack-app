@@ -1,47 +1,57 @@
-$(document).ready(function() {
-            $(".listBurger").on("click", (event) => {
+$(function() {
+    $(".updateBurger").on("click", function(event) {
 
-                let id = $(this).data("id");
-                let newDevour = {
-                    burger: burger_name,
-                    Devoured: $("Devoured=0").val().trim()
-                };
+        const _id = $(this).data("id");
 
-                $
-                    .ajax("/api/burgers" + id, {
-                        method: "PUT",
-                        data: newDevour
-                    })
-                    .then(() => {
-                        console.log("Changed burger to Eaten");
-                        // Reload the page to get the updated list
-                        location.reload();
-                    });
-            });
+        const what_do_do = { effect: 1 };
 
-            $("#addBurger").on("submit", (event) => {
-                    // Make sure to preventDefault on a submit event.
-                    event.preventDefault();
+        console.log("the id is ", _id);
 
-                    // Get the ID by finding an element with a "name" attribute equal to the string "id"
-                    let newBurger = {
-                        burger: $("#create-burger-text").val().trim(),
-                        Devoured: $("Devoured=1).val().trim()
-                        };
+        $.ajax(`/api/burgers/${_id}`, {
+            type: "PUT",
+            data: what_do_do
+        }).then(
+            function() {
+
+                location.reload();
+            }
+        );
+    });
+
+    $(".deleteBurger").on("click", function(event) {
+        const _id = $(this).data("id");
+
+        $.ajax("/api/burgers/" + _id, { type: "DELETE" })
+            .then(
+                function() {
+                    console.log("deleted burger" + _id);
+                    location.reload();
+                }
+            );
+    });
+
+    $("#addBurger").on("submit", (event) => {
+        event.preventDefault();
+
+        const burger_name = $("#add-burger-text").val().trim();
+
+        let newBurger = {
+            burger_name: burger_name,
+            Devoured: 0
+        };
+
+        $.ajax("/api/burgers", {
+                method: "POST",
+                data: newBurger
+            })
+            .then(
+                function() {
+                    console.log("updated burger", newBurger);
+
+                    location.reload();
+                }
+            );
+    });
 
 
-
-                        $.ajax("/api/burgers/" + id, {
-                            method: "POST",
-                            data: newBurger
-                        })
-                        .then(
-                            function() {
-                                console.log("updated id ", id);
-                                // Reload the page to get the updated list
-                                location.reload();
-                            }
-                        );
-                    });
-
-            });
+});

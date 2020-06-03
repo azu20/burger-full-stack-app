@@ -5,7 +5,7 @@
   <p class="lead text-center">Add a burger. Once it has been added to the Uneaten Burger list click to eat. </p> 
    <p class="lead text-center"> Once the burger is on the Burgers Eaten list, click on the burger to delete.</p>
    <div class="text-center">
-  <img src="../public/assets/images/burger-img.jpg" class="rounded" alt="Burger">
+  <img src="../assets/images/burger-img.jpg" class="rounded" alt="Burger">
 </div>
 </div>
 <div class="container">
@@ -17,11 +17,20 @@
         </tr>
         <tr>
           <td>
-            {{#each burgers}}
+        {{#each burgers}}
           </td>
         </tr>
         <tr>
-          <td><button id="updateBurger">{{this.burger_name}}</button></td>
+          <td>
+            {{#unless this.Devoured}}
+
+            <button class="updateBurger" data-id="{{this.id}}" data-name="{{this.burger_name}}">
+              
+            {{this.burger_name}}
+
+            </button>
+            {{/unless}}
+           </td>
         </tr>
         {{/each}}
       </table>
@@ -37,7 +46,12 @@
           </td>
         </tr>
         <tr>
-          <td><button id="deleteBurger">{{this.burger_name}}</button></td>
+          <td>
+            {{#if this.Devoured}}
+            <button class="deleteBurger" data-id="{{ this.id}}">{{this.burger_name}}
+            </button>
+            {{/if}}
+            </td>
         </tr>
         {{/each}}
       </table>
@@ -46,7 +60,7 @@
   <br>
   <hr class="my-4">
   <form id="addBurger" class="text-center">
-    <input type="text" name="create-burger-text"></input>
-    <button class="btn btn-info btn-md" href="#" role="button" id="addBurgBtn">Add Burger</button>
+    <input id="add-burger-text" type="text" name="create-burger-text"></input>
+    <button class="btn btn-info btn-md" href="#" type="submit" role="button" id="addBurgBtn">Add Burger</button>
   </form>
 </div>

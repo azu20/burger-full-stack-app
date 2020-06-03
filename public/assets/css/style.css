@@ -1,11 +1,15 @@
 body {
-    background-color: rebeccapurple;
+    background-color: plum;
 }
 
 .container {
-    background-color: rebeccapurple;
+    background-color: plum;
 }
 
 .btn-info {
-    background-color: red;
+    background-color: purple;
+}
+
+.jumbotron {
+    background-color: lavenderblush;
 }

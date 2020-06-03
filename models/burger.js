@@ -14,7 +14,14 @@ const burger = {
     },
 
     update: async(objColVals, condition) => {
+
         const result = await orm.update("burger", objColVals, condition);
+
+        return result;
+    },
+    delete: async(condition) => {
+
+        const result = await orm.delete("burger", condition);
 
         return result;
     }
