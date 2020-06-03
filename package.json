@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/azu20/burger-full-stack-app#readme",
   "dependencies": {
+    "config.json": "0.0.4",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "jquery": "^3.5.1",
