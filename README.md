@@ -9,7 +9,7 @@ This is the first Full-Stack App I have created. This burger logging app uses My
 https://desolate-wave-36352.herokuapp.com/
 
 
-![burger App screenshot](./public/assets/images/screenshot.png)
+![app screenshot](./public/assets/images/screenshot.jpg)
 
 ### Before You Begin
 
@@ -139,7 +139,7 @@ https://desolate-wave-36352.herokuapp.com/
 All the recommended files and directories from the steps above should look like the following structure:
 
 ```
-.
+
 ├── config
 │   ├── connection.js
 │   └── orm.js
