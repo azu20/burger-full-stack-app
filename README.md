@@ -8,6 +8,8 @@ This is the first Full-Stack App I have created. This burger logging app uses My
 
 https://desolate-wave-36352.herokuapp.com/
 
+![day planner](./public/assets/images/screenshot.png)
+
 ### Before You Begin
 
 * Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
