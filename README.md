@@ -5,7 +5,7 @@ First Full-Stack App
 
 ### Overview
 
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
+This burger logging app uses MySQL, Node, Express, Handlebars and a homemade ORM (yum!). It also applies the MVC design pattern. 
 
 ### Read This
 
