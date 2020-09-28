@@ -8,8 +8,7 @@ This is the first Full-Stack App I have created. This burger logging app uses My
 
 https://desolate-wave-36352.herokuapp.com/
 
-
-![app screenshot](./public/assets/images/screenshot.jpg)
+<img src="./public/assets/images/screenshot.jpg" width="250" height="350">
 
 ### Before You Begin
 
