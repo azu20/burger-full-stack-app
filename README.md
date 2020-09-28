@@ -1,14 +1,16 @@
-# burger-full-stack-app
+# Burger App 
+
+## Deployed Website: 
+
+https://desolate-wave-36352.herokuapp.com/
+
+<img src="./public/assets/images/screenshot.jpg" width="250" height="300">
+
+* [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM)
 
 ### Overview
 
 This is the first Full-Stack App I have created. This burger logging app uses MySQL, Node, Express, Handlebars and a homemade ORM (yum!). It also applies the MVC design pattern. 
-
-# Deployed Website: 
-
-https://desolate-wave-36352.herokuapp.com/
-
-<img src="./public/assets/images/screenshot.jpg" width="250" height="350">
 
 ### Before You Begin
 
@@ -20,6 +22,6 @@ https://desolate-wave-36352.herokuapp.com/
 
 * Your app will store every burger in a database, whether devoured or not.
 
-* [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM).
 
-## Instructions
+
+
