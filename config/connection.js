@@ -28,5 +28,3 @@ connection.connect((err) => {
     console.log("connected as id " + connection.threadId);
 });
 connection.query = util.promisify(connection.query);
-// Export connection for our ORM to use.
-module.exports = connection;
